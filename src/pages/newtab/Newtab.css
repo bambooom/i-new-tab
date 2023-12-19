@@ -4,6 +4,17 @@
     background-size: cover;
 }
 
+.App::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background: linear-gradient(180deg,rgba(0,0,0,.25) 0,transparent 20%,transparent 50%,rgba(0,0,0,.25));
+    pointer-events: none;
+}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;

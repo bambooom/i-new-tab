@@ -3,6 +3,11 @@ import { BaseStorage, createStorage, StorageType } from '@src/shared/storages/ba
 type BG = {
   id: string;
   url: string;
+  description: string;
+  author: {
+    name: string;
+    id: string;
+  };
   updated: number;
 };
 

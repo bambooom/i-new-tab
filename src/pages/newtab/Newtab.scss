@@ -1,10 +1,110 @@
-$myColor: red;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $myColor;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+  color: #999;
+  transition: all .3s ease-in-out;
+  &:focus, &:hover {
+    outline: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.int-container {
+  transition: all .15s;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .25) 0, transparent 20%, transparent 50%, rgba(0, 0, 0, .25));
+    pointer-events: none;
+  }
+}
+
+.int-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.int-footer, .int-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  padding: 20px 30px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.int-author {
+  margin-left: 4px;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  opacity: 0.7;
+  text-decoration: underline dotted 1px #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.int-download-link {
+  display: flex;
+  align-items: center;
+
+  a {
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid hsla(0, 0%, 100%, .5);
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(0, 0, 0, .04);
+    opacity: .8;
+
+    &:hover {
+      color: #fff;
+      opacity: 1;
+      border-color: hsla(0, 0%, 100%, .85);;
+    }
+  }
 }

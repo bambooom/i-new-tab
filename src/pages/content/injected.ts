@@ -1,9 +1,9 @@
-import exampleThemeStorage from '@src/shared/storages/exampleThemeStorage';
+import themeStorage from '@root/src/shared/storages/theme';
 
 async function toggleTheme() {
-  console.log('initial theme', await exampleThemeStorage.get());
-  exampleThemeStorage.toggle();
-  console.log('toggled theme', await exampleThemeStorage.get());
+  console.log('initial theme', await themeStorage.get());
+  themeStorage.toggle();
+  console.log('toggled theme', await themeStorage.get());
 }
 
 void toggleTheme();
