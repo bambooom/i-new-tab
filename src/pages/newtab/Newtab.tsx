@@ -12,15 +12,14 @@ import withErrorBoundary from '@src/shared/hoc/withErrorBoundary';
 const Newtab = () => {
   const theme = useStorage(exampleThemeStorage);
   const curBgStorage = useStorage(bgStorage);
-  const [bgUrl, setBgUrl] = useState('');
-  const [bgUpdated, setBgUpdated] = useState(curBgStorage?.updated);
+  const [bgUrl, setBgUrl] = useState(curBgStorage?.url);
+  const bgUpdated = curBgStorage?.updated;
   const browserApi = createApi({
     apiUrl: 'https://unsplash-proxy-bambooom.vercel.app/api',
   });
   useEffect(() => {
     // updated less than 1 hour
-    console.log('updated: ', bgUpdated);
-    if (bgUpdated && Date.now() - bgUpdated.valueOf() < 60 * 60 * 1000) {
+    if (bgUpdated && Date.now() - bgUpdated < 60 * 60 * 1000 && bgUrl) {
       return;
     }
     browserApi.photos
@@ -32,11 +31,10 @@ const Newtab = () => {
           console.log(result.response);
           if (!Array.isArray(result.response)) {
             setBgUrl(result.response.urls.regular);
-            const t = new Date();
-            setBgUpdated(t);
             bgStorage.set({
               id: result.response.id,
-              updated: t,
+              url: result.response.urls.regular,
+              updated: Date.now(),
             });
           }
         }

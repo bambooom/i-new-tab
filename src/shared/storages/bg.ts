@@ -2,11 +2,13 @@ import { BaseStorage, createStorage, StorageType } from '@src/shared/storages/ba
 
 type BG = {
   id: string;
-  updated: Date;
+  url: string;
+  updated: number;
 };
 
 type BgStorage = BaseStorage<BG> & {
   update: () => void;
+  clear: () => void;
 };
 
 const storage = createStorage<BG>('bg-storage-key', undefined, {
@@ -18,8 +20,11 @@ const bgStorage: BgStorage = {
   ...storage,
   update: () => {
     storage.set(val => {
-      return { ...val, updated: new Date() };
+      return { ...val, updated: Date.now() };
     });
+  },
+  clear: () => {
+    storage.set(null);
   },
 };
 
