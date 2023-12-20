@@ -68,8 +68,13 @@ a {
   width: 100%;
   z-index: 1;
   padding: 20px 30px;
-  font-size: 14px;
+  font-size: 13px;
   color: #fff;
+}
+
+.int-logo {
+  width: 30px;
+  height: 30px;
 }
 
 .int-author {
@@ -107,4 +112,27 @@ a {
       border-color: hsla(0, 0%, 100%, .85);;
     }
   }
+}
+
+.int-body {
+  position: relative;
+  padding: 100px;
+  width: 100%;
+  z-index: 1;
+  font-size: 16px;
+}
+
+.weather-chart {
+  position: relative;
+  width: 730px;
+  height: 320px;
+}
+
+.weather-chart-title {
+  position: absolute;
+  top: -25px;
+  left: 280px;
+  z-index: 2;
+  margin-top: 0px;
+  color: #666;
 }
