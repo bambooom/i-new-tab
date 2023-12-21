@@ -20,6 +20,10 @@ const timeFormatter = (date: number) => {
   const t = new Date(date);
   return `${t.getMonth() + 1}-${t.getDate()} ${t.getHours()}:00`;
 };
+
+const tooltipFormatter = (value: number, name: string) => {
+  return [value + '°C', name.charAt(0).toUpperCase() + name.slice(1)];
+};
 const Newtab = () => {
   const [lat, setLat] = useState<number>();
   const [long, setLong] = useState<number>();
@@ -133,7 +137,7 @@ const Newtab = () => {
               />
               <YAxis unit="°C" label={{ value: 'Temperature', angle: -90, position: 'insideLeft' }} />
               <CartesianGrid strokeDasharray="3 3" />
-              <Tooltip />
+              <Tooltip formatter={tooltipFormatter} labelFormatter={timeFormatter} />
               <Area
                 type="monotone"
                 dataKey="temperature"

@@ -11,7 +11,7 @@ code {
 }
 
 a {
-  color: #999;
+  color: #ccc;
   transition: all .3s ease-in-out;
   &:focus, &:hover {
     outline: none;
@@ -124,8 +124,11 @@ a {
 
 .weather-chart {
   position: relative;
-  width: 730px;
-  height: 320px;
+  padding: 15px;
+  width: 760px;
+  height: 350px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-radius: 8px;
 }
 
 .weather-chart-title {
