@@ -39,7 +39,7 @@
     "@commitlint/cli": "18.2.0",
     "@commitlint/config-conventional": "18.1.0",
     "@rollup/plugin-typescript": "11.1.5",
-    "@testing-library/react": "14.0.0",
+    "@testing-library/react": "14.2.1",
     "@types/chrome": "0.0.254",
     "@types/node": "20.10.5",
     "@types/react": "18.2.45",
